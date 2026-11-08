@@ -5,7 +5,7 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>disable</ImplicitUsings>
     <AssemblyName>DiscordQuestDecoy</AssemblyName>
     <RootNamespace>DiscordQuestDecoy</RootNamespace>
     <Product>Discord Quest Decoy</Product>
