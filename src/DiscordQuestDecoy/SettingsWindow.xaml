@@ -1,7 +1,7 @@
 <Window x:Class="DiscordQuestDecoy.SettingsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="{Binding L[settings_title]}" Width="540" Height="700" MinWidth="480" MinHeight="480"
+        Title="{Binding L[settings_title]}" Icon="Assets/icon.ico" Width="540" Height="700" MinWidth="480" MinHeight="480"
         Background="#0E0E0E" Foreground="#EDEDED" FontFamily="Segoe UI" FontSize="13"
         WindowStartupLocation="CenterOwner" ShowInTaskbar="False" UseLayoutRounding="True">
 

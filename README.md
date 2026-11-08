@@ -1,4 +1,8 @@
-# Discord Quest Decoy
+<p align="center">
+  <img src="docs/logo.png" width="128" alt="Discord Quest Decoy logo">
+</p>
+
+<h1 align="center">Discord Quest Decoy</h1>
 
 Make Discord see a game that isn't actually running, so "play this game" Quests can progress without installing the game.
 
