@@ -1,0 +1,67 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Work out the version
+        id: ver
+        shell: pwsh
+        run: |
+          if ("${{ github.ref_type }}" -eq "tag") {
+            $v = "${{ github.ref_name }}".TrimStart("v")
+          } else {
+            $v = "0.0.0-dev"
+          }
+          "version=$v" >> $env:GITHUB_OUTPUT
+
+      - name: Publish
+        shell: pwsh
+        run: >
+          dotnet publish src/DiscordQuestDecoy/DiscordQuestDecoy.csproj
+          -c Release -r win-x64 --self-contained true
+          -p:PublishSingleFile=true
+          -p:IncludeNativeLibrariesForSelfExtract=true
+          -p:EnableCompressionInSingleFile=true
+          -p:Version=${{ steps.ver.outputs.version }}
+          -o publish
+
+      - name: Package
+        shell: pwsh
+        run: |
+          $folder = "discord-quest-decoy"
+          New-Item -ItemType Directory -Path $folder | Out-Null
+          Copy-Item publish/DiscordQuestDecoy.exe $folder/
+          Copy-Item -Recurse src/DiscordQuestDecoy/Languages "$folder/languages"
+          Copy-Item README.md, LICENSE $folder/
+          Compress-Archive -Path $folder -DestinationPath "discord-quest-decoy-${{ steps.ver.outputs.version }}-win-x64.zip"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: discord-quest-decoy
+          path: discord-quest-decoy-*.zip
+
+      - name: Attach to the GitHub release
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: discord-quest-decoy-*.zip
+          generate_release_notes: true

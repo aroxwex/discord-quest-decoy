@@ -1,0 +1,14 @@
+# Build output
+bin/
+obj/
+publish/
+*.zip
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Runtime data when running from the repo
+data/
