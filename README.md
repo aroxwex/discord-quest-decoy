@@ -62,7 +62,7 @@ To uninstall, close the app and delete the folder.
 
 If a game doesn't register, stop it and try another executable from the list.
 
-The files inside `data/games/` are the stand-in programs the app creates. If you open one by hand it only shows its small window, it does not start the app again.
+The files inside `data/games/` are the stand-in programs the app creates. They are meant to be started from the app only: opening one by hand simply opens the app (or does nothing if it is already running).
 
 ## Limitations
 

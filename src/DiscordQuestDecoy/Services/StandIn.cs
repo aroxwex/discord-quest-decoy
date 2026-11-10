@@ -1,19 +1,18 @@
-using System.Text.Json;
-using DiscordQuestDecoy.Models;
+using System.Diagnostics;
 
 namespace DiscordQuestDecoy.Services;
 
 public static class StandIn
 {
+    public const string MutexName = "DiscordQuestDecoy.SingleInstance";
+
     /// <summary>
-    /// True when this exe is one of the stand-ins sitting in "...\data\games\&lt;id&gt;\...". Opening such a file
-    /// by hand then shows the stand-in window instead of starting a second copy of the app (which would
-    /// create another data folder). Reads the main app's settings only to find the game name and language.
+    /// True when this exe is one of the stand-ins sitting in "...\data\games\&lt;id&gt;\...".
+    /// <paramref name="root"/> is the folder that contains the main app and its data folder.
     /// </summary>
-    public static bool TryDetect(string? exePath, out string title, out string text)
+    public static bool IsStandInPath(string? exePath, out string root)
     {
-        title = "";
-        text = "";
+        root = "";
         if (string.IsNullOrEmpty(exePath)) return false;
 
         const string marker = "\\data\\games\\";
@@ -26,32 +25,37 @@ public static class StandIn
         var id = rest.Split('\\')[0];
         if (id.Length == 0 || !id.All(char.IsDigit)) return false;
 
-        var root = exePath.Substring(0, index);
-        var name = Path.GetFileNameWithoutExtension(exePath);
-        var language = "en";
+        root = exePath.Substring(0, index);
+        return true;
+    }
 
+    /// <summary>
+    /// A stand-in opened by hand just hands over to the main app: it starts it if it isn't running,
+    /// and does nothing if it already is. Stand-ins are only meant to be started from the app itself.
+    /// </summary>
+    public static void OpenMainApp(string root)
+    {
         try
         {
-            var file = Path.Combine(root, "data", "settings.json");
-            if (File.Exists(file))
+            if (Mutex.TryOpenExisting(MutexName, out var running))
             {
-                var settings = JsonSerializer.Deserialize<AppSettings>(File.ReadAllText(file), Json.Options);
-                if (settings != null)
+                running.Dispose();
+                return;
+            }
+
+            var main = Path.Combine(root, "DiscordQuestDecoy.exe");
+            if (File.Exists(main))
+            {
+                Process.Start(new ProcessStartInfo(main)
                 {
-                    language = settings.Language;
-                    var game = settings.MyGames.FirstOrDefault(g => g.Id == id);
-                    if (game != null && game.Name.Length > 0) name = game.Name;
-                }
+                    UseShellExecute = true,
+                    WorkingDirectory = root,
+                });
             }
         }
         catch
         {
-            // fall back to the file name and English
+            // nothing sensible to do: just exit
         }
-
-        Loc.Instance.SetLanguage(language);
-        title = name;
-        text = Loc.Instance["sleeper_text"];
-        return true;
     }
 }

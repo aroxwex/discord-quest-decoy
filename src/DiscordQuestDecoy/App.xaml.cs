@@ -24,10 +24,11 @@ public partial class App : Application
             return;
         }
 
-        // A stand-in opened by hand (double-click in data\games\...): show its window, don't start the app.
-        if (StandIn.TryDetect(Environment.ProcessPath, out var standTitle, out var standText))
+        // A stand-in opened by hand (double-click in data\games\...): hand over to the main app and quit.
+        if (StandIn.IsStandInPath(Environment.ProcessPath, out var standRoot))
         {
-            new SleeperWindow(standTitle, standText).Show();
+            StandIn.OpenMainApp(standRoot);
+            Shutdown();
             return;
         }
 
@@ -42,7 +43,7 @@ public partial class App : Application
         SettingsStore.Load();
         Loc.Instance.SetLanguage(SettingsStore.Current.Language);
 
-        _mutex = new Mutex(true, "DiscordQuestDecoy.SingleInstance", out var created);
+        _mutex = new Mutex(true, StandIn.MutexName, out var created);
         _ownsMutex = created;
         if (!created)
         {
