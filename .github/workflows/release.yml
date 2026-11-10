@@ -50,6 +50,7 @@ jobs:
           New-Item -ItemType Directory -Path $folder | Out-Null
           Copy-Item publish/DiscordQuestDecoy.exe $folder/
           Copy-Item -Recurse src/DiscordQuestDecoy/Languages "$folder/languages"
+          Copy-Item extra-games.txt $folder/
           Compress-Archive -Path $folder -DestinationPath "discord-quest-decoy-${{ steps.ver.outputs.version }}-win-x64.zip"
 
       - name: Upload build artifact
