@@ -46,5 +46,6 @@
   "sleeper_text": "Discord Quest Decoy tarafından simüle ediliyor.\nGörev sürerken bu pencereyi açık tut.",
   "err_noaccess": "Uygulama bu klasöre yazamıyor:\n{0}\n\nUygulamayı Belgeler veya Masaüstü gibi yazabildiğin bir klasöre taşı.",
   "err_alreadyrunning": "Discord Quest Decoy zaten çalışıyor.",
-  "err_start": "Oyun başlatılamadı: {0}"
+  "err_start": "Oyun başlatılamadı: {0}",
+  "settings_openextra": "Ek oyunlar dosyasını aç"
 }

@@ -15,6 +15,7 @@ Discord Quest Decoy is a small, portable Windows app. You pick a game from Disco
 - Search Discord's detectable game list and keep your own **My games** list
 - One click to start and stop a stand-in for the selected game
 - Game list is refreshed from Discord at startup, with a built-in copy as a fallback
+- Optional `extra-games.txt` adds more games, shown with a `[custom]` tag
 - Dark interface with a settings screen (language, list updates, folders)
 - Translations are plain JSON files, so adding a language needs no code
 - Portable: everything lives in the app's own folder, nothing is written elsewhere
@@ -36,6 +37,7 @@ Windows SmartScreen may warn about an unsigned app on first launch. Choose **Mor
 ```
 discord-quest-decoy/
 ├─ DiscordQuestDecoy.exe
+├─ extra-games.txt       optional extra games (see below)
 ├─ languages/            translation files (add your own here)
 │  ├─ en.json
 │  └─ tr.json
@@ -60,16 +62,37 @@ To uninstall, close the app and delete the folder.
 
 If a game doesn't register, stop it and try another executable from the list.
 
+The files inside `data/games/` are the stand-in programs the app creates. If you open one by hand it only shows its small window, it does not start the app again.
+
 ## Limitations
 
 - Windows only.
 - Only helps with Quests that ask you to **play a game on desktop**. It does nothing for video, stream or activity Quests.
 - It relies on how Discord currently detects games. Discord can change that at any time, and the tool may stop working without notice.
-- Only games on Discord's detectable list are supported, and only the ones that list a Windows executable.
+- Only games on Discord's detectable list (and the ones you add in `extra-games.txt`) are available, and only those with a Windows executable.
 
 ## Privacy
 
 The app collects nothing and sends nothing about you anywhere. Its only network request is downloading Discord's public game list at startup, which you can turn off in Settings. To get new versions, watch the repository's releases on GitHub.
+
+## Extra games
+
+`extra-games.txt` (next to the exe) lets you add games that are missing from Discord's list. Each game is a block: the name on one line, then one executable path per line. Blank lines separate games and lines starting with `#` are comments.
+
+```
+Mozilla Firefox
+..\Mozilla Firefox\firefox.exe
+
+Some Game
+..\Some Game\bin\game.exe
+..\Some Game\launcher.exe
+```
+
+- A leading `..\` is ignored and both `\` and `/` work.
+- Only paths ending in `.exe` are used, anything else is skipped.
+- These games appear in the search with a `[custom]` tag. Open the file from Settings > Open extra games file, and the list reloads when you close Settings.
+- The file is optional. If it is missing or has mistakes, the app still works.
+- Whether Discord recognises one of these paths is up to Discord. Some entries may not count towards a Quest.
 
 ## Adding a language
 

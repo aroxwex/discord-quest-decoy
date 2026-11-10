@@ -1,0 +1,349 @@
+# Extra games for Discord Quest Decoy
+# One game per block: the name on its own line, then one executable path per line.
+# A leading ..\ in a path is ignored. Blank lines separate games.
+# Lines starting with # are comments. This file is optional: delete it and the app still works.
+# Games from this file show up in the search with a [custom] tag.
+
+AION 2
+..\AION 2\AION2.exe
+
+Albion Online
+..\Albion-Online.exe
+
+Aniimo
+..\Aniimo\Aniimo.exe
+
+Apex Legends
+..\Apex Legends\r5apex.exe
+
+Arc Raiders
+..\Arc Raiders\PioneerGame.exe
+
+Arena Breakout Infinite
+..\Win64\UAGame.exe
+
+Arknights Endfield
+..\EndField Game\Endfield.exe
+
+Assassin's Creed Black Flag Resynced
+..\Assassin's Creed Black Flag Resynced\ACBlackFlag.exe
+
+Battlefield 6
+..\Battlefield 6\bf6.exe
+
+Blue Protocol Star Resonance
+..\bpsr\BPSR_STEAM.exe
+
+Call of Duty
+..\Call of Duty\_retail_\cod.exe
+..\Call of Duty HQ\cod.exe
+..\Call of Duty\_retail_\bootstrapper.exe
+
+Call of Duty: Ghosts
+..\Call of Duty Ghosts\iw6sp64_ship.exe
+..\Call of Duty Ghosts\iw6mp64_ship.exe
+
+Call of Duty: Modern Warfare
+..\Call of Duty Modern Warfare\ModernWarfare.exe
+
+Call of Duty: Modern Warfare Remastered
+..\Call of Duty Modern Warfare Remastered\h1_sp64_ship.exe
+..\Call of Duty Modern Warfare Remastered\h1_mp64_ship.exe
+
+Call of Duty 4: Modern Warfare (2007)
+..\Call of Duty 4 - Modern Warfare\iw3sp.exe
+..\Call of Duty 4 - Modern Warfare\iw3mp.exe
+..\Call of Duty 4\iw3sp.exe
+..\Call of Duty 4\iw3mp.exe
+
+Call of Duty: Modern Warfare 2
+..\Call of Duty Modern Warfare 2\iw4sp.exe
+..\Call of Duty Modern Warfare 2\iw4mp.exe
+
+Call of Duty: Modern Warfare 3
+..\Call of Duty Modern Warfare 3\iw5sp.exe
+..\Call of Duty Modern Warfare 3\iw5mp.exe
+
+Call of Duty: Modern Warfare 4
+..\Call of Duty Modern Warfare IV\cod26-cod.exe
+..\Call of Duty Modern Warfare 4\sp26-cod.exe
+
+Comet Browser
+..\Comet\Perplexity\Comet\Application\comet.exe
+
+Clive Barker's Hellraiser: Revival
+..\win64\hellraiser-win64-shipping.exe
+
+Delta Force
+..\Win64\DeltaForceClient-Win64-Shipping.exe
+
+Deadzone Rogue 2
+..\Win64\deadzone2steam.exe
+
+Destiny 2
+..\Destiny 2\destiny2.exe
+
+Dragon Age: The Veilguard
+..\Dragon Age The Veilguard\Dragon Age The Veilguard.exe
+
+Dragon's Dogma 2
+..\Dragons Dogma 2\DD2.exe
+
+Dragon's Dogma: Dark Arisen
+..\Dragons Dogma Dark Arisen\DDDA.exe
+
+Dragonheir: Silent Gods
+..\Dragonheir Silent Gods\Dragonheir.exe
+
+Duet Night Abyss
+..\Duet Night Abyss\EM-Win64-Shipping.exe
+
+EA Sports FC 26
+..\EA SPORTS FC 26\FC26.exe
+
+EA SPORTS FC 27
+..\EA SPORTS FC 27\fc27.exe
+
+EMPULSE
+..\Win64\OrionClient-Win64-Shipping.exe
+
+Enginefall
+..\Win64\ColtraneClient-Win64-Shipping.exe
+
+Escape The Backrooms
+..\Win64\Backrooms-Win64-Shipping.exe
+
+EVE Online
+..\Eve Online\exefile.exe
+
+Fallout 4
+..\Fallout 4\Fallout4.exe
+
+Fallout 76
+..\Fallout76\Fallout76.exe
+
+FINAL FANTASY XIV Online
+..\boot\ffxivboot.exe
+..\game\ffxiv_dx11.exe
+
+Fortnite
+..\Win64\FortniteClient-Win64-Shipping.exe
+
+Genshin Impact
+..\Genshin Impact game\GenshinImpact.exe
+
+GearUP
+..\Gearup_ball.exe
+
+Goals
+..\GOALS\Game\Binaries\Win64\Goals.exe
+
+GODDESS OF VICTORY: NIKKE
+..\NIKKE/NIKKE/Game/nikke.exe
+
+Gravebound
+..\Gravebound\Gravebound.exe
+
+Grounded 2
+..\WinGRTS\Grounded2-WinGRTS-Shipping.exe
+
+Helldivers 2
+..\Helldivers 2\bin\helldivers2.exe
+
+Highguard
+..\Win64\HighguardClient-Win64-Shipping.exe
+
+Honkai: Star Rail
+..\Games\StarRail.exe
+
+Hunt: Showdown 1896
+..\win_x64\HuntGame.exe
+
+Kritika
+..\Win64\jf.exe
+
+League of Legends
+..\Game\League of Legends.exe
+
+MapleStory
+..\MapleStory\MapleStory.exe
+..\appdata\MapleStory.exe
+..\MSCW\MapleStory.exe
+..\MapleStory Worlds\MapleStoryWorlds.exe
+
+March of Giants
+..\Win64\TheLineClient-Win64-Shipping.exe ..\March of Giants\TheLineClient.exe
+
+Marvel Rivals
+..\MarvelRivals\MarvelRivals_Launcher.exe
+..\Win64\Marvel-Win64-Shipping
+
+MARVEL SNAP
+..\MARVEL SNAP\SNAP.exe
+
+Marvel Tokon Fighting Souls
+..\Win64\MTFSSteam-Win64-Shipping.exe
+
+Monster Hunter Stories
+..\Monster Hunter Stories\MHST.exe
+
+Monster Hunter Wilds
+..\MonsterHunterWilds\MonsterHunterWilds.exe
+
+Mozilla Firefox
+..\Mozilla Firefox/firefox.exe
+
+Nekome: Nazi Hunter
+..\Win64\nekomedemo.exe
+
+NTE: Neverness to Everness
+..\Win64\HTGame.exe
+
+OldSchool RuneScape
+..\win64\osclient.exe
+
+Once Human
+..\Once Human\ONCE_HUMAN.exe
+
+Onimusha: Way of the Sword
+..\OnimushaWotS_Demo\OnimushaWotS_Demo.exe
+
+Opera
+..\Opera GX\opera.exe
+
+Path of Exile 2
+..\Path of Exile 2\pathofexile.exe
+
+PUBG: Battlegrounds
+..\Win64\TslGame.exe
+
+Pragmata
+..\PRAGMATA SKETCHBOOK\PRAGMATA_SKETCHBOOK.exe
+
+RAID: Shadow Legends
+..\RAID Shadow Legends\Raid.exe
+..\build\Raid.exe
+
+Ragnarok: The New World
+..\roworld\game.exe
+
+Resident Evil HD Remaster
+..\Resident Evil Biohazard HD REMASTER\bhd.exe
+
+Resident Evil Revelations 2
+..\Resident Evil Revelations 2\rerev2.exe
+
+Resident Evil Requiem
+..\RESIDENT EVIL requiem BIOHAZARD requiem\re9.exe
+
+Resident Evil 0
+..\Resident Evil 0\re0hd.exe
+
+Resident Evil 3
+..\RE3\re3.exe
+
+Resident Evil 4 Ultimate HD Edition
+..\Resident Evil 4\bio4.exe
+
+Resident Evil 5
+..\Resident Evil 5\re5dx9.exe
+
+Resident Evil 6
+..\Resident Evil 6\BH6.exe
+
+Resident Evil 7 Biohazard
+..\Resident Evil 7 Biohazard\re7.exe
+
+Resident Evil Village
+..\Resident Evil Village BIOHAZARD VILLAGE\re8.exe
+
+Risk of Rain 2
+..\Risk of Rain 2\Risk of Rain 2.exe
+
+Roblox
+..\version-xxxxxxxx\RobloxPlayerBeta.exe
+..\ROBLOX\Roblox.exe
+
+Rune Diсe
+..\Rune Dice\Rune Dice.exe
+
+Runescape
+..\win64\runescape.exe
+
+Shift At Midnight
+..\Shift At Midnight Demo\ShiftAtMidnight.exe
+
+skate.
+..\skate\skate.exe
+
+STALZONE
+..\bin\stalcraftw.exe
+
+Street Fighter 6
+..\Street Fighter 6\StreetFighter6.exe
+
+Storm Lancers (Requires Steam Demo)
+..\Storm Lancers Demo\StormLancersDemo.exe
+
+Summoners War
+..\Summoners War\SummonersWar.exe
+
+Terminull Brigade
+..\Win64\Rouge-Win64-Shipping.exe
+
+The Binding of Isaac Rebirth
+..\The Binding of Isaac Rebirth\isaac-ng.exe
+
+The Elder Scrolls Online
+..\The Elder Scrolls Online\game\client\eso64.exe
+
+The Mound: Omen of Cthulhu
+..\Win64\TheMound-Win64-Shipping.exe
+
+The Witcher 3: Wild Hunt
+..\x64_dx12\witcher3.exe
+
+Torchlight Infinite
+..\Win64\Torchlight_Infinite.exe
+
+Valorant
+..\Win64\VALORANT-Win64-Shipping.exe
+
+Vindictus
+..\Vindictus\Vindictus_x64
+
+Umamusume: Pretty Derby
+..\UmamusumePrettyDerby\UmamusumePrettyDerby.exe
+
+Warframe
+..\warframe.exe
+
+War Thunder
+..\win64\aces.exe
+
+Where Winds Meet
+..\Win64r\wwm.exe
+
+Wizard101
+..\Wizard101\\Wizard101.exe
+
+World of Tanks: HEAT
+..\WoT HEAT\wgcs_api.exe
+
+World of Warcraft: Forever
+..\World of Warcraft\_forever_\Wow.exe
+
+World of Warcraft: Midnight
+..\World of Warcraft\_retail_\Wow.exe
+
+Wuthering Waves
+..\Win64\Wuthering Waves.exe
+
+Yu-Gi-Oh! Master Duel
+..\Yu-Gi-Oh! Master Duel\masterduel.exe
+
+Zenless Zone Zero
+..\ZenlessZoneZero Game\ZenlessZoneZero.exe
+
+2XKO
+..\Win64\Lion-Win64-Shipping.exe

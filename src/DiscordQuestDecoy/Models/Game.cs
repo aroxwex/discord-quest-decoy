@@ -6,6 +6,7 @@ public sealed class Game
     public string Name { get; set; } = "";
     public List<string> Exes { get; set; } = new();
     public string? SelectedExe { get; set; }
+    public bool Custom { get; set; }
 }
 
 public sealed class GameListData

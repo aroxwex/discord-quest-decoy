@@ -114,6 +114,20 @@ public partial class SettingsWindow : Window, INotifyPropertyChanged
         Win.Open(AppPaths.LanguagesDir);
     }
 
+    void OpenExtra_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            if (!File.Exists(ExtraGamesService.FilePath))
+                File.WriteAllText(ExtraGamesService.FilePath, ExtraGamesService.Template);
+            Win.Open(ExtraGamesService.FilePath);
+        }
+        catch (Exception ex)
+        {
+            Log.Info("Could not open the extra games file: " + ex.Message);
+        }
+    }
+
     void OpenLog_Click(object sender, RoutedEventArgs e)
     {
         if (!File.Exists(AppPaths.LogFile)) File.WriteAllText(AppPaths.LogFile, "");

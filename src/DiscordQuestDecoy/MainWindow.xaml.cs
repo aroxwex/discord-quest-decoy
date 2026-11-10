@@ -16,6 +16,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     readonly FakeGameRunner _runner = new();
 
     GameListData _data = new();
+    List<Game> _custom = new();
     List<(Game Game, string Lower)> _index = new();
     string _searchText = "";
     bool _showResults;
@@ -50,6 +51,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         };
 
         _data = _lists.LoadLocal();
+        _custom = ExtraGamesService.Load();
         RebuildIndex();
 
         foreach (var saved in SettingsStore.Current.MyGames)
@@ -123,7 +125,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public string MyGamesCountText => L.F("mygames_count", MyGames.Count);
     public string SelectedSubtitle => Selected == null ? "" : L.F("sel_exes", Selected.Exes.Count);
     public string StopAllText => L.F("btn_stopall", RunningCount);
-    public string SearchPlaceholder => L.F("search_placeholder", _data.Games.Count.ToString("N0"));
+    public string SearchPlaceholder => L.F("search_placeholder", (_data.Games.Count + _custom.Count).ToString("N0"));
     public string FooterText => L.F("footer_list", SourceName, UpdatedText, _data.Games.Count.ToString("N0"));
 
     string SourceName => _data.Source == "discord" ? L["source_discord"] : L["source_builtin"];
@@ -145,7 +147,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         g.Id.Length > 0 && g.Id.All(char.IsDigit) && g.Exes.Count > 0 && g.Exes.All(GameListService.ValidExe);
 
     void RebuildIndex() =>
-        _index = _data.Games.Select(g => (g, g.Name.ToLowerInvariant())).ToList();
+        _index = _data.Games.Concat(_custom).Select(g => (g, g.Name.ToLowerInvariant())).ToList();
 
     void ApplyList(GameListData data)
     {
@@ -178,6 +180,14 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Log.Info("Game list download failed: " + ex.Message);
             return (false, L["settings_updatefailed"]);
         }
+    }
+
+    void LoadCustom()
+    {
+        _custom = ExtraGamesService.Load();
+        RebuildIndex();
+        OnPropertyChanged(nameof(SearchPlaceholder));
+        if (ShowResults) RunSearch();
     }
 
     void ClearCache()
@@ -281,6 +291,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Name = source.Name,
             Exes = new List<string>(source.Exes),
             SelectedExe = source.Exes.FirstOrDefault(),
+            Custom = source.Custom,
         };
 
         var item = Wrap(copy);
@@ -400,6 +411,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         var window = new SettingsWindow(RefreshListAsync, () => ListInfo, ClearCache) { Owner = this };
         window.ShowDialog();
+        LoadCustom();
     }
 
     protected override void OnClosing(CancelEventArgs e)

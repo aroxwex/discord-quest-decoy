@@ -110,7 +110,7 @@
                                             </Style>
                                         </Ellipse.Style>
                                     </Ellipse>
-                                    <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center"
+                                    <TextBlock Grid.Column="1" Text="{Binding DisplayName}" VerticalAlignment="Center"
                                                TextTrimming="CharacterEllipsis"/>
                                     <TextBlock Grid.Column="2" Text="{Binding ExeLabel}" Margin="10,0,4,0" FontSize="11"
                                                Foreground="{StaticResource MutedBrush}" VerticalAlignment="Center"

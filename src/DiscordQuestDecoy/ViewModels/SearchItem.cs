@@ -10,7 +10,7 @@ public sealed class SearchItem : ObservableObject
     public SearchItem(Game game) => Game = game;
 
     public Game Game { get; }
-    public string Name => Game.Name;
+    public string Name => Game.Custom ? "[custom] " + Game.Name : Game.Name;
     public string ExeText => Game.Exes.FirstOrDefault() ?? "";
 
     public bool IsAdded

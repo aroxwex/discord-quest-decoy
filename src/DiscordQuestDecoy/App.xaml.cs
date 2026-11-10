@@ -24,6 +24,13 @@ public partial class App : Application
             return;
         }
 
+        // A stand-in opened by hand (double-click in data\games\...): show its window, don't start the app.
+        if (StandIn.TryDetect(Environment.ProcessPath, out var standTitle, out var standText))
+        {
+            new SleeperWindow(standTitle, standText).Show();
+            return;
+        }
+
         if (!AppPaths.EnsureDataDir(out var error))
         {
             MessageBox.Show(Loc.Instance.F("err_noaccess", AppPaths.BaseDir) + "\n\n" + error,

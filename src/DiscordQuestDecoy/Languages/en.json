@@ -46,5 +46,6 @@
   "sleeper_text": "Simulated by Discord Quest Decoy.\nKeep this window open while your Quest is running.",
   "err_noaccess": "The app can't write to this folder:\n{0}\n\nMove it to a folder you can write to, such as Documents or Desktop.",
   "err_alreadyrunning": "Discord Quest Decoy is already running.",
-  "err_start": "Couldn't start the game: {0}"
+  "err_start": "Couldn't start the game: {0}",
+  "settings_openextra": "Open extra games file"
 }

@@ -17,6 +17,7 @@ public sealed class GameItem : ObservableObject
     public Game Game { get; }
     public string Id => Game.Id;
     public string Name => Game.Name;
+    public string DisplayName => Game.Custom ? "[custom] " + Game.Name : Game.Name;
     public IReadOnlyList<string> Exes => Game.Exes;
 
     /// <summary>Called when something that should be saved changes.</summary>
